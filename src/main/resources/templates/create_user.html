@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" type="text/css" rel="stylesheet">
+</head>
+<body>
+<p>User : <span th:text="${user.firstName}">Seb</span></p>
+<form th:action="@{/create}" method="post" th:object="${user}">
+    <div>
+        <label>FirstName</label>
+        <input type="text" id="firstName" name="firstName" th:field="*{firstName}"/>
+
+        <label>LastName</label>
+        <input type="text" id="lastName" name="lastName" th:field="*{lastName}"/>
+    </div>
+    <label>Submit</label>
+    <button type="Submit">Submit</button>
+</form>
+
+</body>
+</html>
